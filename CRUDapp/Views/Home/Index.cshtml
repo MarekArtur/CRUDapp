@@ -1,0 +1,26 @@
+﻿@model IEnumerable<CRUDapp.Models.Contact>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <!-- Modal placeholder -->
+    <div id="modal-placeholder"></div>
+
+    <div>
+        <h1 class="display-4 text-center">Welcome</h1>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-warning" title="New contact" data-toggle="ajax-modal"
+                data-target="#add-contact" data-url="@Url.Action("Contact")">
+            Add contact
+        </button>
+        <div id="notification" class="mt-3" data-url="@Url.Action("Notifications", "Home")" ></div>
+    </div>
+
+    <!-- List of contacts -->
+    <div class="mt-3 table-responsive">
+        <partial name="_ContactsPartial.cshtml" />
+    </div>
+</div>

@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Whois Developer Test Overview";
+}
+
+<div class="jumbotron">
+    <h1 class="text-center">@ViewData["Title"]</h1>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <h3 style="text-decoration: underline;">Overview</h3>
+            <hr />
+
+            <p>
+                Over the course of the 3 hour allotted time frame, we would like you to build a contact form CRUD app.
+            </p>
+            <p>
+                The only required tech is the use .NET (If possible use/try Blazor, if not core or MVC is fine)
+                and the latest version of SQL server, the HTML can be done in a framework of your choice
+                (bootstrap, foundation, custom) and the same applies for javascript (angular, Vue, react, jquery, vanilla).
+            </p>
+
+            <h4 style="text-decoration: underline;">
+                Spec</h3>
+                <p>
+                    The user will be able to input contact data into a form, once the data is saved
+                    the user will be able to then see the stored data with the option to edit or delete the record.
+                    At this point, styling isn’t essential.
+                </p>
+
+                <ul class="customLi">
+                    <lh>The input data should be as follows:</lh>
+                    <li>Name</li>
+                    <li>Email</li>
+                    <li>Phone Number</li>
+                    <li>Domain</li>
+                    <li>Notes</li>
+                </ul>
+
+                <p>
+                    When a user has entered their contact information the data should be saved to the database
+                    and then be outputted into a html table on the front end, this could be done using AJAX.
+                </p>
+                <p>
+                    In the last column of the table row, two additional buttons should be included
+                    as well as the contact information. These buttons will be the edit and delete button.
+                </p>
+                <p>
+                    When a user clicks the edit button, a modal should be launched with that records data in input boxes.
+                    The user is then able to edit the data and resave the record.
+                    When the modal is closed the updated record should be populated in the table.
+                </p>
+                <p>
+                    When a user clicks the delete button, a different modal should appear asking the user to confirm
+                    if they want to delete the record.
+                    If a user clicks yes the modal should close and the table should be updated to reflect the change.
+                </p>
+        </div>
+
+        <div class="col-12 col-md-6 bg-secondary text-white p-3">
+            <h3>About CRUDapp</h3>
+            <hr />
+
+            <p>
+                ASP.NET Core 5.0 MVC, Entity Framework Core and Entity Framework Core SQL Server database
+                with controllers and views. Front-end on basis ofieldset Bootstrap 4 supported by font awesome library.
+            </p>
+
+            <ul class="customLi">
+                <lh>Some things this application has:</lh>
+                <li>Implement inheritance in the data model</li>
+                <li>Perform raw SQL queries</li>
+                <li>Use dynamic LINQ to simplify code</li>
+                <li>Modal insert dialog with data outputted into a html table on the front end using jQuery AJAX call </li>
+                <li>Localhost database</li>
+                <li>Initialise DB with test data</li>
+                <li>Server side and client side jQuery Unobtrusive Validation</li>
+                <li>Notifications</li>
+                <li>Asynchronous code</li>
+                <li>Responsive pages</li>
+            </ul>
+
+            <p>Yours faithfully,</p>
+
+            <p class="font-italic">Marek A. Kubis</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+﻿@model CRUDapp.Models.Contact
+
+@{
+    ViewData["Title"] = "Contact details";
+}
+
+<div class="modal fade" id="details-contact" tabindex="-1" role="dialog" aria-labelledby="detailsContactLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+
+            <div class="card">
+                <div class="card-header modal-header">
+                    <h1>@ViewData["Title"]</h1>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+
+                <div class="card-body modal-body">
+                    <dl class="row">
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.ID)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.ID)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Name)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Name)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Email)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Email)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Phone)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Phone)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Domain)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Domain)
+                        </dd>
+                        <dt class="col-sm-4">
+                            @Html.DisplayNameFor(model => model.Notes)
+                        </dt>
+                        <dd class="col-sm-8">
+                            @Html.DisplayFor(model => model.Notes)
+                        </dd>
+                    </dl>
+                </div>
+
+                <div class="card-footer modal-footer">
+                    <button type="button" class="btn btn-success" data-toggle="ajax-modal" 
+                            data-target="#edit-contact" data-url="@Url.Action("Edit", new { id = @Model.ID })">
+                        Edit contact
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">Back to the list of contacts</a>
+                </div>
+            
+        </div>
+    </div>
+</div>

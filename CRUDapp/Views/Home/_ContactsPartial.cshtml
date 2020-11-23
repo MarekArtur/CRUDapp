@@ -1,0 +1,64 @@
+﻿@model IEnumerable<CRUDapp.Models.Contact>
+
+<!-- Contacts table -->
+<table id="contacts" class="table table-striped " data-url="@Url.Action("Index")" >
+        <thead>
+            <tr>
+                <th class="th-lg">
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th class="th-lg">
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th class="th-lg">
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+                <th class="th-lg">
+                    @Html.DisplayNameFor(model => model.Domain)
+                </th>
+                <th class="th-lg">
+                    @Html.DisplayNameFor(model => model.Notes)
+                </th>
+                <th class="th-lg"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <th scope="row">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Domain)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    <button type="button" class="btn btn-sm btn btn-outline-success" title="Edit contact" 
+                            data-toggle="ajax-modal" data-target="#edit-contact" 
+                            data-url="@Url.Action("Edit", new { id = @item.ID })">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-danger" title="Delete contact"
+                            data-toggle="ajax-modal" data-target="#delete-contact" 
+                            data-url="@Url.Action("Delete", new { id = @item.ID })">
+                        <i class="fa fa-remove " aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-dark" title="Contact information" 
+                            data-toggle="ajax-modal" data-target="#details-contact" 
+                            data-url="@Url.Action("Details", new { id = @item.ID })">
+                        <i class="fa fa-info fa-1x" aria-hidden="true"></i>
+                    </button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
